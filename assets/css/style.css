@@ -178,7 +178,7 @@ blockquote {
 .memos__content:before {
     content: '';
     position: absolute;
-    background: url('https://mirrors.flytusky.top/avatar/28b57baa4e8f13fe4292ccb2de267e30') no-repeat;
+    background: url('https://https://cdn.dusays.com/avatar.png') no-repeat;
     background-size: contain;
     width: 40px;
     height: 40px;
