@@ -372,7 +372,7 @@ window.onload = getTotal();
 
 // Toggle Darkmode
 const localTheme = window.localStorage && window.localStorage.getItem("theme");
-const themeToggle = document.querySelector(".theme-toggle");
+const themeToggle = volantis.dark.toggle();
 
 if (localTheme) {
     document.body.classList.remove("light-theme", "dark-theme");
