@@ -383,7 +383,7 @@ const themeUndefined = !new RegExp("(dark|light)-theme").test(document.body.clas
 const isOSDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 if (themeUndefined) {
-    if (volantis.dark) {
+    if (isOSDark) {
         document.body.classList.add("light-theme");
     } else {
         document.body.classList.add("dark-theme");
