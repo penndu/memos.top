@@ -379,25 +379,22 @@ if (localTheme) {
     document.body.classList.add(localTheme);
 }
 
-themeToggle.addEventListener("click", () => {
-    const themeUndefined = !new RegExp("(dark|light)-theme").test(document.body.className);
-    const isOSDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+const themeUndefined = !new RegExp("(dark|light)-theme").test(document.body.className);
+const isOSDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    if (themeUndefined) {
-        if (isOSDark) {
-            document.body.classList.add("light-theme");
-        } else {
-            document.body.classList.add("dark-theme");
-        }
+if (themeUndefined) {
+    if (volantis.dark) {
+        document.body.classList.add("light-theme");
     } else {
-        document.body.classList.toggle("light-theme");
-        document.body.classList.toggle("dark-theme");
+        document.body.classList.add("dark-theme");
     }
-
-    window.localStorage &&
-        window.localStorage.setItem(
-            "theme",
-            document.body.classList.contains("dark-theme") ? "dark-theme" : "light-theme",
-        );
-});
+} else {
+    document.body.classList.toggle("light-theme");
+    document.body.classList.toggle("dark-theme");
+}
+window.localStorage &&
+    window.localStorage.setItem(
+        "theme",
+        document.body.classList.contains("dark-theme") ? "dark-theme" : "light-theme",
+    );
 // Darkmode End
