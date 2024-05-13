@@ -392,6 +392,14 @@ if (themeUndefined) {
     document.body.classList.toggle("light-theme");
     document.body.classList.toggle("dark-theme");
 }
+
+// 添加主题类到动态生成的元素
+const dynamicElements = document.querySelectorAll('.memos__text');
+dynamicElements.forEach(element => {
+    element.classList.toggle("light-theme", !document.body.classList.contains("dark-theme"));
+    element.classList.toggle("dark-theme", document.body.classList.contains("dark-theme"));
+});
+
 window.localStorage &&
     window.localStorage.setItem(
         "theme",
