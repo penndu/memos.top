@@ -371,7 +371,7 @@ window.onload = getTotal();
 // Memos Total End
 
 // Toggle Darkmode
-const localTheme = window.localStorage && window.localStorage.getItem("color-scheme");
+const localTheme = window.localStorage && window.localStorage.getItem("theme");
 const themeToggle = document.querySelector(".theme-toggle");
 
 if (localTheme) {
@@ -383,7 +383,7 @@ const themeUndefined = !new RegExp("(dark|light)-theme").test(document.body.clas
 const isOSDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 if (themeUndefined) {
-    if (light) {
+    if (isOSDark) {
         document.body.classList.add("light-theme");
     } else {
         document.body.classList.add("dark-theme");
