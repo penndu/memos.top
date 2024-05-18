@@ -68,6 +68,7 @@ var memos = memo.host.replace(/\/$/, '')
 var memoUrl = memos + "/api/v1/memos?filter=creator==%22users/" + memo.creatorId + "%22&&rowStatus==NORMAL"
 var page = 1,
     offset = 0,
+    nextPageToken = "",
     nextLength = 0,
     nextDom = '';
 var tag='';
