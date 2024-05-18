@@ -65,7 +65,7 @@ if (typeof (memos) !== "undefined") {
 
 var limit = memo.limit
 var memos = memo.host.replace(/\/$/, '')
-var memoUrl = memos + "/api/v1/memo?creatorId=" + memo.creatorId + "&rowStatus=NORMAL"
+var memoUrl = memos + "/api/v1/memos?filter=creator==%22users/" + memo.creatorId + "%22&&rowStatus==NORMAL"
 var page = 1,
     offset = 0,
     nextLength = 0,
@@ -93,29 +93,31 @@ if (memoDom) {
 }
 
 function getFirstList() {
-    var memoUrl_first = memoUrl + "&limit=" + limit;
-    fetch(memoUrl_first).then(res => res.json()).then(resdata => {
-        updateHTMl(resdata)
-        var nowLength = resdata.length
-        if (nowLength < limit) { // 返回数据条数小于 limit 则直接移除“加载更多”按钮，中断预加载
-            document.querySelector("button.button-load").remove()
-            btnRemove = 1
-            return
-        }
-        page++
-        offset = limit * (page - 1)
-        getNextList()
-    });
-}
+    var memoUrl_first = memoUrl + "&pageSize=" + limit;
+        fetch(memoUrl_first).then(res => res.json()).then(resdata => {
+            updateHTMl(resdata.memos)
+            var nowLength = resdata.memos.length
+            if (nowLength < limit) { // 返回数据条数小于 limit 则直接移除“加载更多”按钮，中断预加载
+                document.querySelector("button.button-load").remove()
+                btnRemove = 1
+                return
+            }
+            page++
+            // offset = limit * (page - 1)
+            nextPageToken = resdata.nextPageToken
+            getNextList()
+        });
+    }
+
 // 预加载下一页数据
 function getNextList() {
     if (tag){
-        var memoUrl_next = memoUrl + "&limit=" + limit + "&offset=" + offset + "&tag=" + tag;
+        var memoUrl_next = memoUrl + "&pageSize=" + limit + "&pageToken=" + nextPageToken + "&tag=" + tag;
     } else {
-        var memoUrl_next = memoUrl + "&limit=" + limit + "&offset=" + offset;
+        var memoUrl_next = memoUrl + "&pageSize=" + limit + "&pageToken=" + nextPageToken;
     }
     fetch(memoUrl_next).then(res => res.json()).then(resdata => {
-        nextDom = resdata
+        nextDom = resdata.memos
         nextLength = nextDom.length
         page++
         offset = limit * (page - 1)
