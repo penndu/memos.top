@@ -121,7 +121,6 @@ blockquote {
 }
 
 .memos a {
-    color: var(--color-link);
     text-decoration: none;
 }
 
@@ -313,6 +312,7 @@ blockquote {
     -ms-overflow-style: none;
     scrollbar-width: none;
     height: 404px;
+    margin-left: 202px;
 }
 
 .timeline img, .resimg img {
@@ -335,10 +335,12 @@ blockquote {
 .load-btn {
     color: var(--color-meta);
     background-color: var(--color-block);
-    margin-left: 50px;
     border-radius: 8px;
     padding: 10px;
     border: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
 
 .load-btn:hover {
