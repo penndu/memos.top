@@ -167,7 +167,7 @@ blockquote {
 .timeline {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: 当前rap;
     margin-bottom: 1.5rem;
 }
 
@@ -224,7 +224,7 @@ blockquote {
     background-color: var(--color-memos-pre-bg);
     padding-left: 0.25rem;
     padding-right: 0.25rem;
-    font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+    font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier 新,monospace;
     font-size: .875rem;
     line-height: 1.5rem;
 }
@@ -304,7 +304,7 @@ blockquote {
 }
 
 .resimg {
-    width: 100%;
+    width: 200%;
     overflow: hidden;
     border-radius: 0.25rem;
     --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);
@@ -312,7 +312,7 @@ blockquote {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
     -ms-overflow-style: none;
     scrollbar-width: none;
-    height: 202px;
+    height: 404px;
 }
 
 .timeline img, .resimg img {
