@@ -55,7 +55,7 @@ body.dark-theme {
 }
 
 @media (prefers-color-scheme: dark) {
-    body:not(。light-theme) {
+    body:not(.light-theme) {
         /* dark theme colors */
         --color-main: #adbac7;
         --color-background: #1c2128;
@@ -333,6 +333,8 @@ blockquote {
 }
 
 .load-btn {
+    color: var(--color-main);
+    background-color: var(--color-text-bg);
     margin-left: 50px;
     border-radius: 8px;
     padding: 10px;
