@@ -109,7 +109,7 @@ blockquote {
 }
 
 .total {
-    text-align: left;
+    text-align: center;
 }
 
 .memos {
@@ -333,8 +333,8 @@ blockquote {
 }
 
 .load-btn {
-    color: var(--color-main);
-    background-color: var(--color-text-bg);
+    color: var(--color-meta);
+    background-color: var(--color-block);
     margin-left: 50px;
     border-radius: 8px;
     padding: 10px;
@@ -342,7 +342,7 @@ blockquote {
 }
 
 .load-btn:hover {
-    background-color: var(--color-text-hover);
+    background-color: var(--color-site-bg);
 }
 
 .post-preview {
