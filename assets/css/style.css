@@ -156,7 +156,7 @@ blockquote {
     object-fit: cover;
 }
 
-。memos__text {
+.memos__text {
     position: relative;
     background: var(--color-block);
     padding: 1rem;
@@ -171,31 +171,31 @@ blockquote {
     margin-bottom: 1.5rem;
 }
 
-.timeline:hover 。memos__text:before {
+.timeline:hover .memos__text:before {
     background: var(--block-hover);
     z-index: 1;
 }
 
-.timeline:hover 。memos__text {
+.timeline:hover .memos__text {
     background: var(--block-hover);
 }
 
-。memos__text {
+.memos__text {
     width: 100%;
     overflow-wrap: break-word;
     font-size: 1rem;
     line-height: 1.75rem;
 }
 
-。memos__text ul li {
+.memos__text ul li {
     list-style: none;
 }
 
-。memos__text i {
+.memos__text i {
     margin: 0 0.25rem;
 }
 
-。memos__text:before {
+.memos__text:before {
     content: "";
     position: absolute;
     top: 23px;
