@@ -18,7 +18,6 @@
     };
     var callback_error = function (element) {
         logElementEvent("💀 ERROR", element);
-        element.src = "/assets/img/error.png";
     };
     var callback_finish = function () {
         logElementEvent("✔️ FINISHED", document.documentElement);
